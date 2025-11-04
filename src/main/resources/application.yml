@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: bilibili-video-service
+  # 改成这个 (文件模式，数据会保存在项目根目录下的 bilibili_stats.mv.db 文件中)
+  datasource:
+    url: jdbc:h2:file:./bilibili_stats  # 从这个 (内存模式，程序关闭后数据丢失) # spring.datasource.url=jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console # 配置后，你可以在浏览器中通过 http://localhost:端口/h2-console 访问控制台界面。
+
+#    sqllite 配置
+#  datasource:
+#    url: jdbc:sqlite:bilibili_stats.db
+#    driver-class-name: org.sqlite.JDBC
+##    database-platform: org.hibernate.community.dialect.SQLiteDialect # 指定 Hibernate 使用的 SQLite 方言
+
+
+
+
+
